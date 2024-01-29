@@ -1,18 +1,21 @@
 <template>
 
 <div class="image-container">
-  <v-img
-  :src="imagemAtual"
-  height="850"
-  cover
-  class="image-with-gradient"
-  ></v-img>
+  <v-fade-transition>
+    <v-img
+    :src="imagemAtual"
+    :key="imagemAtual"
+    height="850"
+    cover
+    class="image-with-gradient"
+    ></v-img>
+  </v-fade-transition>
 </div>
 
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, onBeforeUnmount } from 'vue';
 import { ref } from 'vue';
 
 
@@ -35,15 +38,31 @@ const imagens = ref([
   imagemAtual.value = imagens.value[indiceAleatorio];
 };
 
+const intervalId = setInterval(mudarImagem, 7000);
+
 /**
  * Hooks
  */
 onMounted(() => {
   mudarImagem();
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId);
 })
 </script>
 
 <style scoped>
+
+/* Transição de fade in e fade out */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.75s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+}
+
+/* Degradê da imagem de fundo*/
 .image-container {
   position: relative;
 }
