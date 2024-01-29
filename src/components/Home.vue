@@ -1,7 +1,7 @@
 <template>
 
 <div class="image-container">
-  <v-fade-transition>
+  <v-fade-transition hide-on-leave>
     <v-img
     :src="imagemAtual"
     :key="imagemAtual"
