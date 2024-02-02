@@ -8,7 +8,7 @@
     <div 
     class="ml-10">
       <v-app-bar-title 
-      class="ml-10 pl-10">
+      class="ml-10 pl-10" @click="navegarParaPaginaPrincipal()">
         {{systemName}}
       </v-app-bar-title>
     </div>
@@ -19,7 +19,8 @@
         class="mr-2"
         color="#000000" 
         variant="flat"
-        rounded="0">Login</v-btn>
+        rounded="0"
+        to="/login">Login</v-btn>
         
         <v-btn 
         class="mr-10 "
@@ -53,6 +54,13 @@ import { ref } from "vue";
    * Data
    */
   const systemName = ref('Nome do Site'); 
+
+  /**
+   * Methods
+   */
+  const navegarParaPaginaPrincipal = () => {
+    router.push('/');
+  }
 
 </script>
 

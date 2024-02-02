@@ -38,7 +38,7 @@
         <div class="d-flex align-center flex-column mt-16">
             <v-row>
                 <v-col cols="12" md="2"></v-col>
-                <v-col cols="12" md="5">
+                <v-col cols="12" md="5" class="mr-4">
                     <v-img
                     src="@/assets/produtos/hbo-max_1.jpg"
                     width="700"
@@ -73,7 +73,7 @@
         <div class="d-flex align-center flex-column mt-16">
             <v-row>
                 <v-col cols="12" md="2"></v-col>
-                <v-col cols="12" md="5">
+                <v-col cols="12" md="5" class="mr-4">
                     <v-img
                     src="@/assets/produtos/starplus.jpg"
                     width="700"
